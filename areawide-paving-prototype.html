@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0B0D" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <title>Area Wide Paving | Northeast Texas Asphalt Contractor | Sulphur Springs, Longview, Tyler, Paris TX</title>
 <meta name="description" content="Northeast Texas's most trusted asphalt paving contractor for 20+ years. Owner Paul Pogue on every jobsite. Driveways, parking lots, sealcoating, striping. Serving Hopkins, Titus, Gregg, Hunt, Smith, Lamar counties. Call (903) 885-6388." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -154,7 +156,7 @@
   --rust: #C97A1C;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html { scroll-behavior: smooth; }
 
@@ -163,11 +165,15 @@ body {
   color: var(--bone);
   font-family: var(--sans);
   font-weight: 400;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.55;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior: none;
+  overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 769px) {
+  body { font-size: 16px; line-height: 1.5; }
 }
 
 /* Asphalt texture overlay */
@@ -370,7 +376,7 @@ img { max-width: 100%; display: block; }
   display: none;
   position: fixed;
   top: 0; right: -100%;
-  width: 320px; height: 100vh;
+  width: 320px; height: 100dvh;
   background: var(--ink-2);
   border-left: 1px solid rgba(244, 241, 236, 0.08);
   z-index: 200;
@@ -439,6 +445,9 @@ img { max-width: 100%; display: block; }
 @keyframes topoDrift {
   from { background-position: 0 0; }
   to { background-position: 800px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-topo { animation: none; }
 }
 /* Bottom-right amber glow */
 .hero-glow {
@@ -533,8 +542,9 @@ img { max-width: 100%; display: block; }
 .hero h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: clamp(40px, 7vw, 96px);
   line-height: 0.95;
+  text-wrap: balance;
   letter-spacing: -0.03em;
   margin-bottom: 32px;
 }
@@ -1595,6 +1605,8 @@ img { max-width: 100%; display: block; }
   background: var(--ink-2);
   padding: 80px 0 40px;
   border-top: 1px solid rgba(244, 241, 236, 0.08);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 .footer-grid {
   display: grid;
@@ -1644,30 +1656,57 @@ img { max-width: 100%; display: block; }
   gap: 16px;
 }
 
-/* ============ MOBILE CALL BAR ============ */
-.mobile-call {
+/* ============ MOBILE THUMB-ZONE CTA BAR ============ */
+.thumb-bar {
   display: none;
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  background: var(--amber);
-  color: var(--ink);
-  padding: 16px 20px;
   z-index: 200;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: -0.005em;
-  text-align: center;
-  box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  background: rgba(10, 11, 13, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(244, 241, 236, 0.08);
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
 }
-.mobile-call span {
-  display: inline-flex;
+.thumb-bar.hidden { transform: translateY(100%); }
+.thumb-bar-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.thumb-btn {
+  display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.1s ease;
 }
-.mobile-call svg { width: 20px; height: 20px; }
+.thumb-btn:active { transform: scale(0.97); }
+.thumb-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.thumb-btn-primary {
+  background: linear-gradient(135deg, var(--amber), var(--amber-2));
+  color: var(--ink);
+}
+.thumb-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(244, 241, 236, 0.2);
+  color: var(--bone);
+}
 @media (max-width: 768px) {
-  .mobile-call { display: block; }
-  body { padding-bottom: 60px; }
+  .thumb-bar { display: block; }
+  body { padding-bottom: 80px; }
+}
+@media (min-width: 769px) {
+  .thumb-bar { display: none !important; }
 }
 
 /* ============ REVEAL ANIMATIONS ============ */
@@ -1728,7 +1767,7 @@ img { max-width: 100%; display: block; }
 /* ============ MOBILE · IPHONE SAFARI ============ */
 @supports (-webkit-touch-callout: none) {
   /* iOS Safari safe area */
-  .mobile-call { padding-bottom: env(safe-area-inset-bottom, 12px); }
+  .thumb-bar { padding-bottom: calc(12px + env(safe-area-inset-bottom, 12px)); }
   .header { -webkit-backdrop-filter: blur(12px); }
 }
 
@@ -1801,13 +1840,7 @@ img { max-width: 100%; display: block; }
   /* Footer */
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
 
-  /* Mobile call button */
-  .mobile-call {
-    background: linear-gradient(135deg, var(--amber), var(--amber-2));
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
-    padding: 16px 20px;
-    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  }
+
 
   /* Touch targets min 44px */
   .nav a, .mobile-nav a, .answer-header,
@@ -2455,21 +2488,21 @@ img { max-width: 100%; display: block; }
       <div class="form-row">
         <div class="form-field">
           <label for="q-name">Full Name</label>
-          <input type="text" id="q-name" name="name" placeholder="Your name" required autocomplete="name" inputmode="text">
+          <input type="text" id="q-name" name="name" placeholder="Your name" required autocomplete="name" inputmode="text" enterkeyhint="next">
         </div>
         <div class="form-field">
           <label for="q-phone">Phone Number</label>
-          <input type="tel" id="q-phone" name="phone" placeholder="(903) 555-0000" required autocomplete="tel-national" inputmode="tel">
+          <input type="tel" id="q-phone" name="phone" placeholder="(903) 555-0000" required autocomplete="tel-national" inputmode="tel" enterkeyhint="next">
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label for="q-email">Email (optional)</label>
-          <input type="email" id="q-email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email">
+          <input type="email" id="q-email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" enterkeyhint="next">
         </div>
         <div class="form-field">
           <label for="q-city">City / Area</label>
-          <select id="q-city">
+          <select id="q-city" autocomplete="address-level2">
             <option value="">Select your area</option>
             <option>Sulphur Springs</option>
             <option>Tyler</option>
@@ -2498,11 +2531,11 @@ img { max-width: 100%; display: block; }
         </select>
       </div>
       <div class="form-field">
-        <label for="q-details">Project Details</label>
-        <textarea id="q-details" placeholder="Approximate size, current condition, timeline..."></textarea>
+        <label for="q-details">Tell Paul what you're working with</label>
+        <textarea id="q-details" placeholder="Approximate size, current condition, timeline..." enterkeyhint="send"></textarea>
       </div>
       <button type="submit" class="btn-primary form-submit">
-        Submit Quote Request
+        Send it to Paul
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </form>
@@ -2599,13 +2632,19 @@ img { max-width: 100%; display: block; }
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
 </a>
 
-<!-- Mobile sticky call -->
-<a href="tel:9038856388" class="mobile-call">
-  <span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call (903) 885-6388
-  </span>
-</a>
+<!-- Mobile thumb-zone CTA bar -->
+<div class="thumb-bar" id="thumbBar">
+  <div class="thumb-bar-inner">
+    <a href="tel:9038856388" class="thumb-btn thumb-btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Paul
+    </a>
+    <a href="sms:9038856388?&body=Hey%20Paul%2C%20here%27s%20my%20driveway%3A" class="thumb-btn thumb-btn-outline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text a Photo
+    </a>
+  </div>
+</div>
 
 <script>
 // Mobile nav toggle with ARIA
@@ -2811,21 +2850,20 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.radar-sweep').forEach(el => el.style.animation = 'none');
 }
 
-// Mobile quote FAB — appears after hero, hides near quote form
-const quoteFab = document.getElementById('quoteFab');
-if (quoteFab && window.innerWidth <= 768) {
-  const heroEl = document.querySelector('.hero');
-  const quoteEl = document.getElementById('quote');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBottom = heroEl ? heroEl.offsetTop + heroEl.offsetHeight : 600;
-    const quoteTop = quoteEl ? quoteEl.offsetTop - window.innerHeight : Infinity;
-    if (scrolled > heroBottom && scrolled < quoteTop) {
-      quoteFab.classList.add('visible');
-    } else {
-      quoteFab.classList.remove('visible');
-    }
-  }, { passive: true });
+// Thumb-bar: hide when quote form is in viewport
+const thumbBar = document.getElementById('thumbBar');
+const quoteSection = document.getElementById('quote');
+if (thumbBar && quoteSection && window.innerWidth <= 768) {
+  const thumbObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        thumbBar.classList.add('hidden');
+      } else {
+        thumbBar.classList.remove('hidden');
+      }
+    });
+  }, { threshold: 0.15 });
+  thumbObserver.observe(quoteSection);
 }
 </script>
 
