@@ -14,7 +14,10 @@ img{max-width:100%;display:block}
 .header{position:sticky;top:0;z-index:100;padding:16px 0;background:rgba(10,11,13,0.85);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid rgba(244,241,236,0.06)}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:36px;height:36px;background:var(--ink-2);border:1px solid rgba(244,241,236,0.1);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;color:var(--amber);font-size:16px}
+.logo-mark{width:42px;height:42px;flex-shrink:0;position:relative;transition:transform 0.3s ease}
+.logo:hover .logo-mark{transform:scale(1.06)}
+.logo-mark svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 8px rgba(245,166,35,0.2));transition:filter 0.3s ease}
+.logo:hover .logo-mark svg{filter:drop-shadow(0 0 14px rgba(245,166,35,0.35))}
 .logo-text .name{font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:-0.01em}
 .logo-text .tag{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel)}
 .nav{display:flex;gap:32px}
