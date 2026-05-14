@@ -132,8 +132,253 @@
         "@type": "Answer",
         "text": "Area Wide Paving services an 80-mile radius from Sulphur Springs, TX, covering Sulphur Springs, Mount Pleasant, Longview, Greenville, Tyler, Paris, Texarkana, Marshall, and the surrounding communities across Hopkins, Titus, Wood, Camp, Hunt, Smith, Gregg, Lamar, and Bowie counties."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Asphalt vs. concrete driveways — which is right for East Texas soil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "East Texas clay soil expands and contracts with moisture. Asphalt flexes with it — concrete cracks. For most residential driveways in this region, asphalt is the smarter, longer-lasting, and more cost-effective choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the signs my parking lot needs repaving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alligator cracking, potholes, standing water, faded striping, and base failure at edges are all signs. If more than 30% of the surface shows distress, a full overlay or replacement is usually more cost-effective than patching."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How thick should an asphalt driveway be in Texas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For residential driveways in Northeast Texas, 2.5 to 3 inches of hot-mix asphalt over a 4 to 6 inch compacted aggregate base is standard. Heavy-use driveways (RVs, trailers, farm equipment) require a 4-inch surface layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you pave over an existing gravel driveway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many cases, yes. If the gravel base is stable and well-compacted, asphalt can be applied directly over it after grading and compacting the surface. A professional on-site evaluation is required to determine suitability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between hot-mix and cold-mix asphalt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hot-mix asphalt is produced at 300°F+ and is the industry standard for driveways and parking lots — it bonds tighter, compacts better, and lasts 15–20 years. Cold-mix is a temporary patching material for emergency pothole repair. Area Wide Paving uses hot-mix on every permanent installation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does commercial parking lot paving cost in Northeast Texas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial parking lot paving in Northeast Texas typically costs $2.50 to $5.00 per square foot, depending on lot size, base condition, drainage requirements, and ADA compliance. A 10,000 sq ft church or retail lot typically runs $25,000–$50,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I replace or overlay my old asphalt driveway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the base is still solid and damage is limited to surface cracking and wear, an overlay (2–3 inches of new asphalt) saves about 40% compared to full replacement. If the base has failed with potholes, heaving, or alligator cracking, full tear-out and replacement is the right call."
+      }
     }
   ]
+}
+</script>
+
+<!-- Service Schema — tells AI exactly what we do, where, and at what price -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Area Wide Paving Services",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Asphalt Driveway Installation",
+        "description": "Full-depth asphalt driveways from sub-base to finish, engineered for East Texas clay soil and summer heat. Typical project completed in 1–2 days.",
+        "provider": {"@id": "https://areawidepaving.net/#business"},
+        "areaServed": [
+          {"@type": "State", "name": "Texas"},
+          {"@type": "City", "name": "Sulphur Springs, TX"},
+          {"@type": "City", "name": "Tyler, TX"},
+          {"@type": "City", "name": "Longview, TX"},
+          {"@type": "City", "name": "Greenville, TX"},
+          {"@type": "City", "name": "Paris, TX"}
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": "3",
+          "highPrice": "7",
+          "unitText": "per square foot"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Parking Lot Paving",
+        "description": "New construction or full replacement of commercial parking lots. Engineered sub-base, traffic-rated hot-mix asphalt, ADA-compliant layouts for churches, retail, schools, and HOA properties.",
+        "provider": {"@id": "https://areawidepaving.net/#business"},
+        "areaServed": {"@type": "State", "name": "Texas"},
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": "2.50",
+          "highPrice": "5",
+          "unitText": "per square foot"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "Asphalt Sealcoating",
+        "description": "Professional sealcoat application that extends pavement life by 5–8 years. Protects against UV damage, water infiltration, and petroleum damage. Recommended every 3–5 years in Northeast Texas.",
+        "provider": {"@id": "https://areawidepaving.net/#business"}
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "name": "Parking Lot Striping & Line Marking",
+        "description": "Parking stalls, fire lanes, ADA spaces, directional arrows, and crosswalks. Thermoplastic or traffic paint options. We handle permitting.",
+        "provider": {"@id": "https://areawidepaving.net/#business"}
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "name": "Asphalt Repair & Patching",
+        "description": "Pothole repair, crack filling, and base failure repair. Same-day patching available for commercial properties. Hot-mix or cold-patch depending on scope.",
+        "provider": {"@id": "https://areawidepaving.net/#business"}
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Service",
+        "name": "Asphalt Overlay & Resurfacing",
+        "description": "When the base is solid but the surface is deteriorating, an overlay adds 2–3 inches of fresh asphalt. Typically 40% less cost than full replacement.",
+        "provider": {"@id": "https://areawidepaving.net/#business"}
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Review Schema — structured testimonials for AI citation -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {"@id": "https://areawidepaving.net/#business"},
+    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+    "author": {"@type": "Person", "name": "Mike R."},
+    "reviewBody": "Paul showed up the day after I called, measured everything, and had a written quote by that evening. Driveway was done in two days. Looks incredible.",
+    "datePublished": "2024-09-15"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {"@id": "https://areawidepaving.net/#business"},
+    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+    "author": {"@type": "Person", "name": "Sarah T."},
+    "reviewBody": "We got three quotes. Area Wide was the most detailed and the most honest about what we actually needed. No upselling. Fair price. Great work.",
+    "datePublished": "2024-11-02"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {"@id": "https://areawidepaving.net/#business"},
+    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+    "author": {"@type": "Person", "name": "David L."},
+    "reviewBody": "Third time using Paul. He did our driveway, then our shop pad, now our rental property. Always on time, always clean, always exactly what he quoted.",
+    "datePublished": "2025-03-20"
+  }
+]
+</script>
+
+<!-- HowTo Schema — paving process for AI Overviews -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Get a New Asphalt Driveway from Area Wide Paving",
+  "description": "Area Wide Paving's four-step process for installing a new asphalt driveway in Northeast Texas, from initial call to final walkthrough.",
+  "totalTime": "P3D",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "1800-4200"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Call Paul",
+      "text": "Call (903) 885-6388 and describe your project directly to owner Paul Pogue. Get honest advice in 5 minutes — no call centers, no sales reps."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "On-Site Evaluation & Quote",
+      "text": "Paul visits your property, measures the area, evaluates drainage and soil conditions, and delivers a free itemized written quote within 24 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Paving Day",
+      "text": "Our crew arrives on schedule with commercial-grade pavers and rollers. Most residential driveways are completed in 1–2 days. Paul supervises every phase."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Final Walkthrough",
+      "text": "Walk the finished driveway with Paul to inspect every detail. Surface is ready to drive on within 24–48 hours depending on weather conditions."
+    }
+  ]
+}
+</script>
+
+<!-- Speakable Schema — voice search optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Area Wide Paving | Northeast Texas Asphalt Contractor",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero h1", ".hero-sub", ".paul-quote", ".answer-body p"]
+  },
+  "lastReviewed": "2026-05-14",
+  "author": {
+    "@type": "Person",
+    "name": "Paul Pogue",
+    "jobTitle": "Owner",
+    "worksFor": {"@id": "https://areawidepaving.net/#business"}
+  }
 }
 </script>
 
@@ -2428,6 +2673,54 @@ img { max-width: 100%; display: block; }
           <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
         </div>
         <div class="answer-body"><p>Look for 20+ years in business, owner on every jobsite, itemized bids (not ballpark estimates), proof of insurance, and real Google reviews from local customers. Area Wide Paving checks every box — call Paul directly at (903) 885-6388.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.07</div>
+          <div class="q-text">How thick should an asphalt driveway be in Texas?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>For residential driveways in Northeast Texas, we install 2.5 to 3 inches of hot-mix asphalt over a 4 to 6 inch compacted aggregate base. Heavy-use driveways (RVs, trailers, farm equipment) get a 4-inch surface. The base layer is where most contractors cut corners — we never do.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.08</div>
+          <div class="q-text">Can you pave over an existing gravel driveway?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>In many cases, yes. If the gravel base is stable and well-compacted, we can pave directly over it after grading and compacting the surface. Paul evaluates every site in person — if the base isn't right, he'll tell you before quoting. No guesswork, no surprises.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.09</div>
+          <div class="q-text">What's the difference between hot-mix and cold-mix asphalt?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>Hot-mix asphalt is produced at 300°F+ and is the industry standard for driveways and parking lots — it bonds tighter, compacts better, and lasts 15–20 years. Cold-mix is a temporary patching material used for emergency pothole repair in wet or cold conditions. Area Wide Paving uses hot-mix on every permanent installation.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.10</div>
+          <div class="q-text">How much does commercial parking lot paving cost?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>Commercial parking lot paving in Northeast Texas typically costs $2.50 to $5.00 per square foot, depending on lot size, base condition, drainage requirements, and ADA compliance. A 10,000 sq ft church or retail lot typically runs $25,000–$50,000. We provide free on-site evaluations and itemized quotes within 24 hours.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.11</div>
+          <div class="q-text">What's included in an Area Wide Paving quote?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>Every line item is spelled out: excavation, grading, base material, asphalt tonnage, compaction, cleanup, and any special requirements like drainage or curb work. There are no "miscellaneous" charges. What's quoted is what you pay — Paul guarantees it.</p></div>
+      </div>
+      <div class="answer-item">
+        <div class="answer-header" onclick="toggleAnswer(this)">
+          <div class="num-q">Q.12</div>
+          <div class="q-text">Should I replace or overlay my old asphalt driveway?</div>
+          <div class="q-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="answer-body"><p>If your base is still solid and damage is limited to surface cracking and wear, an overlay (2–3 inches of new asphalt over the existing surface) saves about 40% compared to full replacement. If the base has failed — you'll see potholes, heaving, or alligator cracking — full tear-out and replacement is the right call. Paul evaluates this on every site visit for free.</p></div>
       </div>
     </div>
   </div>

@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /asphalt-driveway-paving-northeast-texas.html
-Disallow: /asphalt-repair-sealcoating.html
-Disallow: /driveway-replacement-resurfacing.html
-Disallow: /commercial-parking-lot-paving.html
-Disallow: /commercial-sealcoating-striping.html
-Disallow: /church-school-municipal-paving.html
-
 Sitemap: https://area-wide.vercel.app/sitemap.xml
