@@ -672,9 +672,9 @@ img { max-width: 100%; display: block; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('img/hero.png') center/cover no-repeat;
-  opacity: 0.18;
-  filter: saturate(0.6);
+  background: url('img/crew-paving-road.jpg') center 40%/cover no-repeat;
+  opacity: 0.28;
+  filter: saturate(0.7);
   transition: transform 0.1s linear;
 }
 /* Topo contour line layer */
@@ -722,7 +722,7 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
   z-index: 1;
 }
-/* Image plate - roller illustration */
+/* Image plate - real crew photo */
 .hero-plate {
   position: absolute;
   right: -2%; top: 8%;
@@ -735,9 +735,15 @@ img { max-width: 100%; display: block; }
   box-shadow: inset 0 0 80px rgba(0,0,0,0.6);
   transition: transform 0.1s linear;
 }
-.hero-plate svg {
+.hero-plate img {
   width: 100%; height: 100%;
-  opacity: 0.08;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.05);
+  transition: filter 0.4s ease, transform 0.6s ease;
+}
+.hero-plate:hover img {
+  filter: saturate(1) contrast(1.1);
+  transform: scale(1.03);
 }
 .hero-plate-caption {
   position: absolute;
@@ -1784,11 +1790,20 @@ img { max-width: 100%; display: block; }
   position: relative;
   overflow: hidden;
 }
+.cta-band-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/paul-jobsite.jpg') center 30%/cover no-repeat;
+  opacity: 0.12;
+  filter: saturate(0.5);
+  pointer-events: none;
+}
 .cta-band::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(180deg, var(--ink) 0%, transparent 30%, transparent 70%, var(--ink) 100%),
     repeating-linear-gradient(
       45deg,
       transparent 0,
@@ -2175,32 +2190,7 @@ img { max-width: 100%; display: block; }
   <div class="hero-bg"></div>
   <div class="hero-topo"></div>
   <div class="hero-glow"></div>
-  <div class="hero-plate" id="heroPlate">
-    <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#F5A623" stroke-width="1.2" stroke-linecap="round">
-        <!-- Asphalt roller side profile - stylized line art -->
-        <rect x="80" y="260" width="240" height="60" rx="4"/>
-        <circle cx="130" cy="350" r="40"/>
-        <circle cx="130" cy="350" r="28" stroke-dasharray="4 4"/>
-        <circle cx="270" cy="350" r="40"/>
-        <circle cx="270" cy="350" r="28" stroke-dasharray="4 4"/>
-        <rect x="100" y="210" width="80" height="50" rx="3"/>
-        <line x1="140" y1="210" x2="140" y2="180"/>
-        <circle cx="140" cy="175" r="6"/>
-        <path d="M180 240 L260 240 L280 260"/>
-        <line x1="160" y1="290" x2="240" y2="290" stroke-dasharray="8 6"/>
-        <!-- Ground line -->
-        <line x1="40" y1="390" x2="360" y2="390" stroke-opacity="0.3"/>
-        <line x1="60" y1="395" x2="340" y2="395" stroke-opacity="0.15" stroke-dasharray="2 4"/>
-        <!-- Decorative elements -->
-        <circle cx="320" cy="140" r="2" fill="#F5A623" opacity="0.4"/>
-        <circle cx="80" cy="160" r="1.5" fill="#F5A623" opacity="0.3"/>
-        <line x1="60" y1="120" x2="120" y2="120" stroke-opacity="0.1"/>
-        <line x1="280" y1="180" x2="340" y2="180" stroke-opacity="0.1"/>
-      </g>
-    </svg>
-    <div class="hero-plate-caption">Crew 02 · Hopkins County · 04.2026</div>
-  </div>
+
   <div class="container hero-grid">
     <div class="hero-left">
       <div class="hero-eyebrow reveal">
@@ -2302,7 +2292,7 @@ img { max-width: 100%; display: block; }
     <div class="services">
       <div class="service">
         <div class="service-num">01 / Residential & Commercial</div>
-        <img src="img/driveway.png" alt="Freshly paved asphalt driveway in Northeast Texas" class="service-img" loading="lazy">
+        <img src="img/crew-driveway.jpg" alt="Area Wide Paving crew standing on a freshly paved residential driveway in Northeast Texas" class="service-img" loading="lazy">
         <h3>Asphalt Driveways</h3>
         <p>New installation and full replacement. Proper base prep for East Texas soil and drainage. Built to handle the heat and last 15-20 years.</p>
         <a href="#quote" class="service-link">Get a Quote →</a>
@@ -2310,7 +2300,7 @@ img { max-width: 100%; display: block; }
 
       <div class="service">
         <div class="service-num">02 / Commercial</div>
-        <img src="img/parking-church.png" alt="Freshly paved church parking lot with striping" class="service-img" loading="lazy">
+        <img src="img/parking-lot-dusk.jpg" alt="Freshly paved commercial parking lot with crisp striping at dusk in Northeast Texas" class="service-img" loading="lazy">
         <h3>Parking Lots</h3>
         <p>Churches, retail, schools, municipalities, industrial. Engineered sub-base, proper grading, and traffic-rated mixes. Turnkey from layout to striping.</p>
         <a href="#quote" class="service-link">Get a Quote →</a>
@@ -2482,28 +2472,28 @@ img { max-width: 100%; display: block; }
     </div>
     <div class="gallery-grid reveal stagger">
       <div class="gallery-item">
-        <img src="img/crew-action.png" alt="Area Wide Paving crew laying fresh asphalt on a residential driveway" loading="lazy">
-        <div class="gallery-label"><strong>Crew on Site</strong>Fresh asphalt install · Sulphur Springs</div>
+        <img src="img/crew-paving-road.jpg" alt="Area Wide Paving crew laying hot-mix asphalt on a road through East Texas pine forest" loading="lazy">
+        <div class="gallery-label"><strong>Road Paving</strong>Full-depth install · Northeast Texas</div>
       </div>
       <div class="gallery-item">
-        <img src="img/parking-retail.png" alt="Commercial retail parking lot freshly paved with striping" loading="lazy">
-        <div class="gallery-label"><strong>Retail Center</strong>42,000 sq ft · Longview, TX</div>
+        <img src="img/crew-driveway.jpg" alt="Three-man crew standing on freshly paved residential driveway at golden hour" loading="lazy">
+        <div class="gallery-label"><strong>Crew on Site</strong>Residential driveway · Sulphur Springs</div>
       </div>
       <div class="gallery-item">
-        <img src="img/driveway.png" alt="Residential driveway in rural Texas" loading="lazy">
-        <div class="gallery-label"><strong>Residential Driveway</strong>New install · Hopkins County</div>
+        <img src="img/parking-lot-dusk.jpg" alt="Completed commercial parking lot with fresh striping at dusk" loading="lazy">
+        <div class="gallery-label"><strong>Commercial Lot</strong>Paving + striping · Hopkins County</div>
       </div>
       <div class="gallery-item">
-        <img src="img/texas-road.png" alt="Freshly paved rural Texas road at golden hour" loading="lazy">
-        <div class="gallery-label"><strong>Rural Access Road</strong>Overlay · Northeast Texas</div>
+        <img src="img/paul-jobsite.jpg" alt="Owner Paul Pogue directing crew on a fresh asphalt jobsite" loading="lazy">
+        <div class="gallery-label"><strong>Owner On Site</strong>Paul Pogue supervising · every project</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/truck-sunrise.jpg" alt="Work truck on East Texas country road at sunrise with morning fog" loading="lazy">
+        <div class="gallery-label"><strong>Early Morning</strong>Heading to the jobsite · East Texas</div>
       </div>
       <div class="gallery-item">
         <img src="img/sealcoat.png" alt="Sealcoating showing before and after contrast" loading="lazy">
         <div class="gallery-label"><strong>Sealcoat Application</strong>Before &amp; after · Tyler area</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/before-after.png" alt="Before and after driveway restoration" loading="lazy">
-        <div class="gallery-label"><strong>Full Restoration</strong>Driveway overlay · Greenville</div>
       </div>
     </div>
   </div>
@@ -2730,7 +2720,7 @@ img { max-width: 100%; display: block; }
 <section class="section owner" id="owner">
   <div class="container owner-grid">
     <div class="owner-visual">
-      <img src="img/paul-real.jpg" alt="Paul Pogue, Owner of Area Wide Paving, in his AWP cap - Sulphur Springs, TX" loading="lazy">
+      <img src="img/paul-jobsite.jpg" alt="Paul Pogue, Owner of Area Wide Paving, directing crew on a jobsite with clipboard in hand - Northeast Texas" loading="lazy">
       <div class="owner-caption">
         <span>Paul Pogue · Owner · Est. 2003</span>
       </div>
@@ -2842,6 +2832,7 @@ img { max-width: 100%; display: block; }
 
 <!-- CTA BAND -->
 <section class="cta-band" id="contact">
+  <div class="cta-band-bg"></div>
   <div class="container">
     <div class="cta-band-eyebrow">No Forms. No Voicemails. Talk to Paul.</div>
     <h2>Get your quote in <em>24 hours.</em></h2>
