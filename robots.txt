@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /areawide-paving-prototype.html
 
-Sitemap: https://area-wide.vercel.app/sitemap.xml
+Sitemap: https://areawidepaving.net/sitemap.xml

@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core pages -->
-  <url><loc>https://area-wide.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://area-wide.vercel.app/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://area-wide.vercel.app/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/service-area.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/reviews.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Service-type landing pages -->
-  <url><loc>https://area-wide.vercel.app/asphalt-repair-sealcoating.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/driveway-replacement-resurfacing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/commercial-parking-lot-paving.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/commercial-sealcoating-striping.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/church-school-municipal-paving.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://area-wide.vercel.app/asphalt-driveway-paving-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Core pages -->
+  <url><loc>https://areawidepaving.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://areawidepaving.net/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://areawidepaving.net/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/service-area.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/reviews.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Service landing pages -->
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-repair-sealcoating.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-sealcoating-repair.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/driveway-replacement-resurfacing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/commercial-parking-lot-paving.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/commercial-sealcoating-striping.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/church-school-municipal-paving.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Geo: Driveway paving by city -->
-  <url><loc>https://area-wide.vercel.app/asphalt-driveway-paving-tyler-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/asphalt-driveway-paving-longview.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/asphalt-driveway-paving-greenville.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/asphalt-driveway-paving-paris-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving-tyler-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving-longview.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving-greenville.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-driveway-paving-paris-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Geo: Parking lot paving by city -->
-  <url><loc>https://area-wide.vercel.app/parking-lot-paving-tyler-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/parking-lot-paving-longview.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/parking-lot-paving-greenville.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://area-wide.vercel.app/parking-lot-paving-paris-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/parking-lot-paving-tyler-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/parking-lot-paving-longview.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/parking-lot-paving-greenville.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/parking-lot-paving-paris-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Geo: City paving pages -->
+  <url><loc>https://areawidepaving.net/asphalt-paving-greenville-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-paving-longview-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-paving-mount-pleasant-tx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Authority content pages -->
-  <url><loc>https://area-wide.vercel.app/asphalt-paving-guide-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://area-wide.vercel.app/asphalt-paving-cost-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-paving-guide-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://areawidepaving.net/asphalt-paving-cost-northeast-texas.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- AI/LLM discovery -->
-  <url><loc>https://area-wide.vercel.app/llms.txt</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://areawidepaving.net/llms.txt</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+
 </urlset>
