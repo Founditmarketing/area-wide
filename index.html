@@ -616,7 +616,7 @@ img { max-width: 100%; display: block; }
   display: none;
   position: fixed;
   top: 0; right: -100%;
-  width: 320px; height: 100dvh;
+  width: min(320px, 85vw); height: 100dvh;
   background: var(--ink-2);
   border-left: 1px solid rgba(244, 241, 236, 0.08);
   z-index: 200;
@@ -1035,7 +1035,7 @@ img { max-width: 100%; display: block; }
 .trust-item svg { color: var(--amber); width: 18px; height: 18px; flex-shrink: 0; }
 
 /* ============ SECTION BASICS ============ */
-.section { padding: 120px 0; position: relative; }
+.section { padding: 120px 0; position: relative; scroll-margin-top: 100px; }
 @media (max-width: 768px) { .section { padding: 80px 0; } }
 
 .section-head {
@@ -2047,6 +2047,10 @@ img { max-width: 100%; display: block; }
   .hero { padding: 48px 0 64px; }
   .hero h1 { font-size: 36px; letter-spacing: -0.02em; }
   .hero h1 .line { white-space: normal !important; }
+
+  /* Hide heavy content sections on mobile to reduce scrolling */
+  .answers { display: none !important; }
+  .owner { display: none !important; }
   .hero-sub { font-size: 16px; margin-bottom: 24px; line-height: 1.6; }
   .hero-ctas { flex-direction: column; gap: 12px; }
   .hero-ctas .btn-primary,
@@ -2123,6 +2127,9 @@ img { max-width: 100%; display: block; }
     display: flex;
     align-items: center;
   }
+
+  /* Prevent horizontal overflow */
+  html, body { overflow-x: hidden; }
 }
 
 /* iPhone SE specific (375px) */
