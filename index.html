@@ -2045,15 +2045,16 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   /* All standard iPhones (SE through Pro Max) */
   .hero { padding: 48px 0 64px; }
-  .hero h1 { font-size: 38px; letter-spacing: -0.02em; }
+  .hero h1 { font-size: 36px; letter-spacing: -0.02em; }
+  .hero h1 .line { white-space: normal !important; }
   .hero-sub { font-size: 16px; margin-bottom: 24px; line-height: 1.6; }
   .hero-ctas { flex-direction: column; gap: 12px; }
   .hero-ctas .btn-primary,
   .hero-ctas .btn-ghost { width: 100%; justify-content: center; min-height: 52px; font-size: 15px; }
-  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .hero-stats { gap: 12px; flex-wrap: wrap; }
   .stat .num { font-size: 32px; }
   .stat .lbl { font-size: 9px; letter-spacing: 0.1em; }
-  .hero-card { padding: 24px; }
+  .hero-card { padding: 24px; max-width: 100%; overflow: hidden; }
   .paul-quote { font-size: 16px; line-height: 1.5; }
 
   /* Section headings */
