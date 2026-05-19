@@ -537,12 +537,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.01em;
 }
 .logo-text .tag {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--steel);
-  margin-top: 2px;
+  display: none;
 }
 .nav {
   display: flex;
@@ -760,7 +755,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: 80px;
   align-items: center;
   position: relative;
@@ -793,11 +788,10 @@ img { max-width: 100%; display: block; }
 .hero h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(40px, 7vw, 96px);
+  font-size: clamp(44px, 5.8vw, 86px);
   line-height: 0.95;
-  text-wrap: balance;
   letter-spacing: -0.03em;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .hero h1 em {
   font-style: italic;
@@ -821,7 +815,7 @@ img { max-width: 100%; display: block; }
   gap: 16px;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 .btn-primary {
   display: inline-flex;
@@ -884,10 +878,9 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  padding-top: 40px;
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
   border-top: 1px solid rgba(244, 241, 236, 0.08);
 }
 @media (max-width: 540px) {
@@ -1548,9 +1541,10 @@ img { max-width: 100%; display: block; }
   background: var(--ink);
   border: 1px solid rgba(244, 241, 236, 0.12);
   color: var(--bone);
-  padding: 14px 16px;
+  padding: 18px 20px;
+  height: 56px;
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   transition: border-color 0.3s, box-shadow 0.3s;
   outline: none;
   border-radius: 0;
@@ -1559,12 +1553,13 @@ img { max-width: 100%; display: block; }
 .form-field select:focus,
 .form-field textarea:focus {
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+  background: rgba(10, 11, 13, 0.9);
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--steel); opacity: 0.6; }
 .form-field input:valid:not(:placeholder-shown) { border-color: rgba(52, 168, 83, 0.5); }
-.form-field textarea { resize: vertical; min-height: 100px; }
+.form-field textarea { resize: vertical; min-height: 120px; height: auto; }
 .form-field select {
   appearance: none;
   cursor: pointer;
@@ -1617,9 +1612,9 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   top: 40px; left: 12.5%; right: 12.5%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--amber), var(--amber), transparent);
-  opacity: 0.3;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--amber) 15%, var(--amber) 85%, transparent 100%);
+  opacity: 0.5;
 }
 @media (max-width: 768px) {
   .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -2153,9 +2148,8 @@ img { max-width: 100%; display: block; }
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
       <a href="#coverage">Coverage</a>
-      <a href="#owner">Paul Pogue</a>
-      <a href="#answers">Answers</a>
-      <a href="#quote">Get a Quote</a>
+      <a href="#owner">About</a>
+      <a href="#quote">Get Your Quote</a>
     </nav>
     <div class="header-cta">
       <a href="tel:9038856388" class="phone-btn">
@@ -2175,11 +2169,10 @@ img { max-width: 100%; display: block; }
 <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileNav()"></div>
 <nav class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="toggleMobileNav()">Services</a>
-  <a href="#coverage" onclick="toggleMobileNav()">Coverage</a>
   <a href="#reviews" onclick="toggleMobileNav()">Reviews</a>
-  <a href="#owner" onclick="toggleMobileNav()">Paul Pogue</a>
-  <a href="#answers" onclick="toggleMobileNav()">Answers</a>
-  <a href="#quote" onclick="toggleMobileNav()">Get a Quote</a>
+  <a href="#coverage" onclick="toggleMobileNav()">Coverage</a>
+  <a href="#owner" onclick="toggleMobileNav()">About</a>
+  <a href="#quote" onclick="toggleMobileNav()">Get Your Quote</a>
   <a href="#contact" onclick="toggleMobileNav()">Contact</a>
 </nav>
 
@@ -2198,19 +2191,18 @@ img { max-width: 100%; display: block; }
         Northeast Texas · 80-Mile Service Radius
       </div>
       <h1 class="reveal">
-        <span class="line">The asphalt</span>
-        <span class="line">contractor <em>East Texas</em></span>
+        <span class="line" style="white-space:nowrap">The contractor <em>East Texas</em></span>
         <span class="line">calls first.</span>
       </h1>
       <p class="hero-sub reveal">
-        <strong>20+ years.</strong> Owner Paul Pogue on every jobsite. Driveways, parking lots, sealcoating, and striping across Hopkins, Titus, Gregg, Hunt, Smith, and Lamar counties — quoted in 24 hours, built to last East Texas summers.
+        Owner Paul Pogue on every jobsite. Driveways, parking lots, sealcoating, and striping across twelve counties — quoted in 24 hours.
       </p>
       <div class="hero-ctas reveal">
-        <a href="tel:9038856388" class="btn-primary">
-          Call Paul Now
+        <a href="#quote" class="btn-primary">
+          Get Your Quote
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#services" class="btn-ghost">View Services</a>
+        <a href="tel:9038856388" class="btn-ghost">(903) 885-6388</a>
       </div>
       <div class="hero-stats reveal">
         <div class="stat">
@@ -2282,7 +2274,7 @@ img { max-width: 100%; display: block; }
     <div class="section-head">
       <div>
         <div class="section-eyebrow">What We Do</div>
-        <h2 class="section-h2">Six trades.<br><em>One crew.</em></h2>
+        <h2 class="section-h2">Six trades. <em>One crew.</em></h2>
       </div>
       <p class="section-intro">
         From a single residential driveway in Sulphur Springs to a 200,000-square-foot retail parking lot in Longview. Same standard, same owner on-site, every time.
@@ -2295,7 +2287,7 @@ img { max-width: 100%; display: block; }
         <img src="img/crew-driveway.jpg" alt="Area Wide Paving crew standing on a freshly paved residential driveway in Northeast Texas" class="service-img" loading="lazy">
         <h3>Asphalt Driveways</h3>
         <p>New installation and full replacement. Proper base prep for East Texas soil and drainage. Built to handle the heat and last 15-20 years.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
 
       <div class="service">
@@ -2303,7 +2295,7 @@ img { max-width: 100%; display: block; }
         <img src="img/parking-lot-dusk.jpg" alt="Freshly paved commercial parking lot with crisp striping at dusk in Northeast Texas" class="service-img" loading="lazy">
         <h3>Parking Lots</h3>
         <p>Churches, retail, schools, municipalities, industrial. Engineered sub-base, proper grading, and traffic-rated mixes. Turnkey from layout to striping.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
 
       <div class="service">
@@ -2311,7 +2303,7 @@ img { max-width: 100%; display: block; }
         <img src="img/sealcoat.png" alt="Sealcoating in progress showing before and after contrast" class="service-img" loading="lazy">
         <h3>Sealcoating</h3>
         <p>Every 3-5 years protects against UV, oil, fuel, and freeze-thaw. We sealcoat residential driveways and commercial lots across all four service hubs.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
 
       <div class="service">
@@ -2319,7 +2311,7 @@ img { max-width: 100%; display: block; }
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6" stroke-dasharray="3 3"/><line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="3 3"/><line x1="3" y1="18" x2="21" y2="18" stroke-dasharray="3 3"/></svg>
         <h3>Striping & Marking</h3>
         <p>ADA-compliant layouts, fire lanes, handicap markings, directional arrows, and custom logos. Long-life traffic paint, sharp lines, code-compliant.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
 
       <div class="service">
@@ -2327,7 +2319,7 @@ img { max-width: 100%; display: block; }
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         <h3>Asphalt Repair</h3>
         <p>Pothole patching, crack filling, transition repair, edge restoration. Stop small problems before they swallow your driveway or shut down your lot.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
 
       <div class="service">
@@ -2335,7 +2327,7 @@ img { max-width: 100%; display: block; }
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         <h3>Overlay & Resurfacing</h3>
         <p>When your existing surface is failing but the base is sound. Mill, prep, and overlay for a fraction of full replacement cost. Years of life recovered.</p>
-        <a href="#quote" class="service-link">Get a Quote →</a>
+        <a href="#quote" class="service-link">Learn more →</a>
       </div>
     </div>
   </div>
@@ -2347,7 +2339,7 @@ img { max-width: 100%; display: block; }
     <div class="section-head">
       <div>
         <div class="section-eyebrow">How It Works</div>
-        <h2 class="section-h2">Four steps.<br><em>No surprises.</em></h2>
+        <h2 class="section-h2">Four steps. No surprises.</h2>
       </div>
       <p class="section-intro">
         From first call to final compaction. Here's exactly how Area Wide Paving works — transparent, on-schedule, owner-present.
@@ -2384,7 +2376,7 @@ img { max-width: 100%; display: block; }
     <div class="section-head">
       <div>
         <div class="section-eyebrow">What Clients Say</div>
-        <h2 class="section-h2">4.9 stars.<br><em>47 reviews.</em></h2>
+        <h2 class="section-h2">4.9 stars. <em>47 reviews.</em></h2>
       </div>
       <p class="section-intro">
         Real reviews from homeowners and property managers across Northeast Texas. No placeholders, no fabrications — just the work speaking for itself.
@@ -2464,7 +2456,7 @@ img { max-width: 100%; display: block; }
     <div class="section-head">
       <div>
         <div class="section-eyebrow">Recent Work</div>
-        <h2 class="section-h2">Built to last.<br><em>Proof on the ground.</em></h2>
+        <h2 class="section-h2">Built to last. Proof on the ground.</h2>
       </div>
       <p class="section-intro">
         Every project photographed. Every surface we lay is proof of 20+ years doing this the right way across Northeast Texas.
@@ -2608,7 +2600,7 @@ img { max-width: 100%; display: block; }
     <div class="section-head">
       <div>
         <div class="section-eyebrow">The Answer Hub</div>
-        <h2 class="section-h2">What East Texas<br><em>actually asks.</em></h2>
+        <h2 class="section-h2">What East Texas actually asks.</h2>
       </div>
       <p class="section-intro">
         Straight answers to the questions homeowners and property managers ask before they ever call a contractor. Built so search engines — and AI assistants — pull the right answer when your name comes up.
@@ -2816,7 +2808,7 @@ img { max-width: 100%; display: block; }
         <textarea id="q-details" placeholder="Approximate size, current condition, timeline..." enterkeyhint="send"></textarea>
       </div>
       <button type="submit" class="btn-primary form-submit">
-        Send it to Paul
+        Get Your Quote
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </form>
@@ -2897,7 +2889,7 @@ img { max-width: 100%; display: block; }
           <li><a href="asphalt-paving-cost-northeast-texas.html">Cost Calculator</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#quote">Get a Quote</a></li>
+          <li><a href="#quote">Get Your Quote</a></li>
         </ul>
       </div>
     </div>
@@ -2918,7 +2910,7 @@ img { max-width: 100%; display: block; }
   <div class="thumb-bar-inner">
     <a href="tel:9038856388" class="thumb-btn thumb-btn-primary">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call Paul
+      (903) 885-6388
     </a>
     <a href="sms:9038856388?&body=Hey%20Paul%2C%20here%27s%20my%20driveway%3A" class="thumb-btn thumb-btn-outline">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
