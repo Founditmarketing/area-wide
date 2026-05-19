@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /areawide-paving-prototype.html
 
-Sitemap: https://areawidepaving.net/sitemap.xml
+Sitemap: https://areawidepaving.com/sitemap.xml
