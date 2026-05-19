@@ -677,6 +677,17 @@ img { max-width: 100%; display: block; }
   opacity: 0.3;
   filter: saturate(0.7);
 }
+.hero-bg .hero-video-mobile { display: none; }
+@media (max-width: 480px) {
+  .hero-bg .hero-video-desktop { display: none; }
+  .hero-bg .hero-video-mobile { display: block; }
+  .hero-bg video { opacity: 0.45; filter: saturate(0.8); }
+  .hero::after {
+    background: linear-gradient(180deg, rgba(10,11,13,0.7) 0%, rgba(10,11,13,0.3) 40%, rgba(10,11,13,0.3) 70%, rgba(10,11,13,0.8) 100%) !important;
+  }
+  .hero-topo { display: none; }
+  .hero-glow { display: none; }
+}
 /* Topo contour line layer */
 .hero-topo {
   position: absolute;
@@ -2204,8 +2215,11 @@ img { max-width: 100%; display: block; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline preload="auto" poster="img/crew-paving-road.jpg">
+    <video class="hero-video-desktop" autoplay muted loop playsinline preload="auto" poster="img/crew-paving-road.jpg">
       <source src="img/hero-bg.mp4" type="video/mp4">
+    </video>
+    <video class="hero-video-mobile" autoplay muted loop playsinline preload="auto" poster="img/parking-lot-dusk.jpg">
+      <source src="img/parking-lot-video.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-topo"></div>
