@@ -1161,6 +1161,16 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 .service:hover .service-img { filter: saturate(1) contrast(1.1); transform: scale(1.02); }
+.service-video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid rgba(244, 241, 236, 0.08);
+  margin-bottom: 20px;
+  filter: saturate(0.85) contrast(1.05);
+  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service:hover .service-video { filter: saturate(1) contrast(1.1); transform: scale(1.02); }
 
 /* ============ PROJECT GALLERY ============ */
 .gallery-section { background: var(--ink-2); }
@@ -2309,7 +2319,9 @@ img { max-width: 100%; display: block; }
 
       <div class="service">
         <div class="service-num">03 / Protection</div>
-        <img src="img/sealcoat.png" alt="Sealcoating in progress showing before and after contrast" class="service-img" loading="lazy">
+        <video class="service-video" autoplay muted loop playsinline preload="auto" poster="img/sealcoat.png">
+          <source src="img/sealcoat-video.mp4" type="video/mp4">
+        </video>
         <h3>Sealcoating</h3>
         <p>Every 3-5 years protects against UV, oil, fuel, and freeze-thaw. We sealcoat residential driveways and commercial lots across all four service hubs.</p>
         <a href="#quote" class="service-link">Learn more →</a>
@@ -2459,46 +2471,6 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- PROJECT GALLERY -->
-<section class="section gallery-section" id="projects">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-eyebrow">Recent Work</div>
-        <h2 class="section-h2">Built to last. Proof on the ground.</h2>
-      </div>
-      <p class="section-intro">
-        Every project photographed. Every surface we lay is proof of 20+ years doing this the right way across Northeast Texas.
-      </p>
-    </div>
-    <div class="gallery-grid reveal stagger">
-      <div class="gallery-item">
-        <img src="img/crew-paving-road.jpg" alt="Area Wide Paving crew laying hot-mix asphalt on a road through East Texas pine forest" loading="lazy">
-        <div class="gallery-label"><strong>Road Paving</strong>Full-depth install · Northeast Texas</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/crew-driveway.jpg" alt="Three-man crew standing on freshly paved residential driveway at golden hour" loading="lazy">
-        <div class="gallery-label"><strong>Crew on Site</strong>Residential driveway · Sulphur Springs</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/parking-lot-dusk.jpg" alt="Completed commercial parking lot with fresh striping at dusk" loading="lazy">
-        <div class="gallery-label"><strong>Commercial Lot</strong>Paving + striping · Hopkins County</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/paul-jobsite.jpg" alt="Owner Paul Pogue directing crew on a fresh asphalt jobsite" loading="lazy">
-        <div class="gallery-label"><strong>Owner On Site</strong>Paul Pogue supervising · every project</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/truck-sunrise.jpg" alt="Work truck on East Texas country road at sunrise with morning fog" loading="lazy">
-        <div class="gallery-label"><strong>Early Morning</strong>Heading to the jobsite · East Texas</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/sealcoat.png" alt="Sealcoating showing before and after contrast" loading="lazy">
-        <div class="gallery-label"><strong>Sealcoat Application</strong>Before &amp; after · Tyler area</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- COVERAGE MAP -->
 <section class="section coverage" id="coverage">
