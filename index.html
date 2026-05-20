@@ -1355,6 +1355,31 @@ img { max-width: 100%; display: block; }
   color: var(--amber);
   border-color: var(--amber);
 }
+.map-vis .label-wrap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.map-vis .label-top {
+  transform: translate(-50%, -100%);
+  margin-top: -12px;
+}
+.map-vis .label-bottom {
+  transform: translate(-50%, 0);
+  margin-top: 12px;
+}
+.map-vis .label-left {
+  transform: translate(-100%, -50%);
+  margin-left: -12px;
+}
+.map-vis .label-right {
+  transform: translate(0, -50%);
+  margin-left: 12px;
+}
 .map-meta {
   position: absolute;
   top: 24px; left: 24px;
@@ -2599,14 +2624,31 @@ img { max-width: 100%; display: block; }
           <path d="M200,200 L200,20 A180,180 0 0,1 356,120 Z" fill="url(#sweep)" opacity="0.6"/>
         </g>
       </svg>
-      <div class="label anchor" style="top: 49%; left: 51%;">Sulphur Springs</div>
-      <div class="label" style="top: 49%; left: 18%;">Greenville</div>
-      <div class="label" style="top: 31%; left: 64%;">Mt. Pleasant</div>
-      <div class="label" style="top: 68%; left: 68%;">Longview</div>
-      <div class="label" style="top: 76%; left: 49%;">Tyler</div>
-      <div class="label" style="top: 19%; left: 47%;">Paris</div>
-      <div class="label" style="top: 25%; left: 80%;">Texarkana</div>
-      <div class="label" style="top: 78%; left: 80%;">Marshall</div>
+      <!-- Labels positioned relative to pins -->
+      <div class="label-wrap" style="top: 50%; left: 50%;">
+        <div class="label anchor label-top">Sulphur Springs</div>
+      </div>
+      <div class="label-wrap" style="top: 50%; left: 25%;">
+        <div class="label label-left">Greenville</div>
+      </div>
+      <div class="label-wrap" style="top: 35%; left: 67.5%;">
+        <div class="label label-left">Mt. Pleasant</div>
+      </div>
+      <div class="label-wrap" style="top: 70%; left: 72.5%;">
+        <div class="label label-left">Longview</div>
+      </div>
+      <div class="label-wrap" style="top: 77.5%; left: 55%;">
+        <div class="label label-bottom">Tyler</div>
+      </div>
+      <div class="label-wrap" style="top: 22.5%; left: 52.5%;">
+        <div class="label label-top">Paris</div>
+      </div>
+      <div class="label-wrap" style="top: 27.5%; left: 85%;">
+        <div class="label label-top">Texarkana</div>
+      </div>
+      <div class="label-wrap" style="top: 70%; left: 85%;">
+        <div class="label label-top">Marshall</div>
+      </div>
     </div>
   </div>
 </section>
