@@ -76,7 +76,7 @@ export default async function handler(req, res) {
   try {
     const emailPayload = {
       from: 'Area Wide Paving <hello@areawidepaving.com>',
-      to: ['owen@founditmarketing.com'],
+      to: ['paulpogue1219@yahoo.com'],
       subject,
       html: htmlBody,
       text: bodyText,
