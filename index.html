@@ -3001,18 +3001,61 @@ document.getElementById('hamburger')?.addEventListener('keydown', function(e) {
   });
 })();
 
-// Form submission with success state
-function handleQuoteSubmit(e) {
+// Form submission — sends to /api/contact via Resend
+async function handleQuoteSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('quoteForm');
+  const btn = form.querySelector('button[type="submit"]');
   const success = document.getElementById('formSuccess');
-  form.style.opacity = '0';
-  form.style.transform = 'translateY(-10px)';
-  form.style.transition = 'opacity 0.3s, transform 0.3s';
-  setTimeout(() => {
-    form.style.display = 'none';
-    success.classList.add('show');
-  }, 300);
+
+  // Loading state
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const payload = {
+    name:    document.getElementById('q-name')?.value?.trim()    || '',
+    phone:   document.getElementById('q-phone')?.value?.trim()   || '',
+    email:   document.getElementById('q-email')?.value?.trim()   || '',
+    city:    document.getElementById('q-city')?.value?.trim()    || '',
+    service: document.getElementById('q-service')?.value?.trim() || '',
+    details: document.getElementById('q-details')?.value?.trim() || '',
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Submission failed');
+    }
+
+    // Success animation
+    form.style.opacity = '0';
+    form.style.transform = 'translateY(-10px)';
+    form.style.transition = 'opacity 0.3s, transform 0.3s';
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.classList.add('show');
+    }, 300);
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.innerHTML = 'Get Your Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    // Show inline error
+    let errEl = form.querySelector('.form-error-msg');
+    if (!errEl) {
+      errEl = document.createElement('p');
+      errEl.className = 'form-error-msg';
+      errEl.style.cssText = 'color:#e05c4b;font-size:14px;margin-top:12px;text-align:center;';
+      btn.insertAdjacentElement('afterend', errEl);
+    }
+    errEl.textContent = err.message || 'Something went wrong. Please call (903) 885-6388.';
+  }
 }
 
 // Phone number masking
