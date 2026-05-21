@@ -129,6 +129,8 @@ details .answer{padding:0 20px 20px;font-size:15px;color:var(--bone-2);line-heig
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<script src="js/analytics.js" defer></script>
+<script src="js/lead-form.js" defer></script>
 </head>
 <body>
 
@@ -152,12 +154,12 @@ details .answer{padding:0 20px 20px;font-size:15px;color:var(--bone-2);line-heig
       <span>12 Counties Served</span>
     </div>
 
-    <form class="lp-form-mini" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--amber);text-align:center;padding:20px;font-weight:600>✓ Got it. Paul will call you within 24 hours.</p>'">
+    <form class="lp-form-mini" data-awp-form data-awp-service="Asphalt Repair &amp; Sealcoating">
       <h3>Get a free quote in 24 hours</h3>
       <div class="fields">
-        <input type="text" placeholder="Your name" required autocomplete="name" enterkeyhint="next">
-        <input type="tel" placeholder="Phone number" required autocomplete="tel" inputmode="tel" enterkeyhint="next">
-        <input type="text" placeholder="Approx. driveway size (sq ft)" enterkeyhint="send">
+        <input name="name"    type="text" placeholder="Your name" required autocomplete="name" enterkeyhint="next">
+        <input name="phone"   type="tel"  placeholder="Phone number" required autocomplete="tel" inputmode="tel" enterkeyhint="next">
+        <input name="details" type="text" placeholder="Approx. driveway size (sq ft)" enterkeyhint="send">
       </div>
       <button type="submit">Send it to Paul →</button>
     </form>

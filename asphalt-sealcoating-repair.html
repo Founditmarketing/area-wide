@@ -1094,6 +1094,8 @@ img, svg { display: block; max-width: 100%; }
 .r { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .r.in { opacity: 1; transform: translateY(0); }
 </style>
+<script src="js/analytics.js" defer></script>
+<script src="js/lead-form.js" defer></script>
 </head>
 <body>
 
@@ -1171,7 +1173,7 @@ img, svg { display: block; max-width: 100%; }
       <h3 class="qc-title">Get a sealcoat quote in <em>24 hours.</em></h3>
       <p class="qc-sub">Send the basics. Paul calls you tomorrow with a real number — and an honest answer on whether sealcoat is the right call for your property.</p>
 
-      <form class="qc-form" id="quoteForm" novalidate>
+      <form class="qc-form" id="quoteForm" data-awp-form data-awp-service="Sealcoating &amp; Repair" novalidate>
         <div class="qc-field">
           <label for="qc-name">Your name</label>
           <input type="text" id="qc-name" name="name" placeholder="First and last" required>
@@ -1699,22 +1701,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// Quote form (simulated submit — replace with real backend on Next.js port)
-document.getElementById('quoteForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  document.getElementById('quoteForm').style.display = 'none';
-  document.getElementById('qcSuccess').classList.add('show');
-  // TODO on production: POST to backend, fire gtag conversion event
-  // gtag('event', 'conversion', { send_to: 'AW-XXX/YYY' });
-});
-
-// Conversion tracking placeholders — wire to gtag/CallRail on production
-document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-  link.addEventListener('click', () => {
-    // gtag('event', 'phone_call_click', { ad_group: 'AG-R1', cta_location: link.id });
-    console.log('Phone CTA tap:', link.id || 'unknown');
-  });
-});
+// Form submit + phone-click conversion tracking is now centralized in
+// js/lead-form.js + js/analytics.js (loaded in <head>).
 
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {

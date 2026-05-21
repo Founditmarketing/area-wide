@@ -56,6 +56,8 @@
 </script>
 
 <link rel="stylesheet" href="css/city-page.css" />
+<script src="js/analytics.js" defer></script>
+<script src="js/lead-form.js" defer></script>
 
 <style>
 .driveway-form { margin-top: 28px; padding: 28px; background: var(--ink-2); border: 1px solid rgba(244,241,236,0.08); }
@@ -104,7 +106,7 @@
 
 <section class="city-hero">
   <div class="city-hero-bg">
-    <video autoplay muted loop playsinline preload="auto" poster="img/driveway.png">
+    <video autoplay muted loop playsinline preload="metadata" poster="img/driveway.png">
       <source src="img/sealcoat-video.mp4" type="video/mp4">
     </video>
   </div>
@@ -124,12 +126,12 @@
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>22+ Years · 58+ Tyler Driveways</div>
     </div>
 
-    <form class="driveway-form" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--amber);text-align:center;padding:20px;font-weight:600>Got it. Paul will call you within 24 hours.</p>'">
+    <form class="driveway-form" data-awp-form data-awp-service="Driveway Paving" data-awp-city="Tyler, TX">
       <h3>Get a free quote in 24 hours</h3>
       <div class="fields">
-        <input type="text" placeholder="Your name" required autocomplete="name">
-        <input type="tel" placeholder="Phone number" required autocomplete="tel" inputmode="tel">
-        <input type="text" placeholder="Approx. driveway size (sq ft)">
+        <input name="name"    type="text" placeholder="Your name" required autocomplete="name">
+        <input name="phone"   type="tel"  placeholder="Phone number" required autocomplete="tel" inputmode="tel">
+        <input name="details" type="text" placeholder="Approx. driveway size (sq ft)">
       </div>
       <button type="submit">Send it to Paul →</button>
     </form>
@@ -156,7 +158,7 @@
       </table>
     </div>
     <div>
-      <video autoplay muted loop playsinline preload="auto" poster="img/driveway.png" style="width:100%; aspect-ratio:16/10; object-fit:cover; border: 1px solid rgba(244,241,236,0.08);">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/driveway.png" style="width:100%; aspect-ratio:16/10; object-fit:cover; border: 1px solid rgba(244,241,236,0.08);">
         <source src="img/sealcoat-video.mp4" type="video/mp4">
       </video>
     </div>

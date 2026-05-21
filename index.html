@@ -2191,6 +2191,8 @@ img { max-width: 100%; display: block; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 </style>
+<script src="js/analytics.js" defer></script>
+<script src="js/lead-form.js" defer></script>
 </head>
 <body>
 
@@ -2272,10 +2274,10 @@ img { max-width: 100%; display: block; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <video class="hero-video-desktop" autoplay muted loop playsinline preload="auto" poster="img/crew-paving-road.jpg">
+    <video class="hero-video-desktop" autoplay muted loop playsinline preload="metadata" poster="img/crew-paving-road.jpg">
       <source src="img/hero-bg.mp4" type="video/mp4">
     </video>
-    <video class="hero-video-mobile" autoplay muted loop playsinline preload="auto" poster="img/parking-lot-dusk.jpg">
+    <video class="hero-video-mobile" autoplay muted loop playsinline preload="metadata" poster="img/parking-lot-dusk.jpg">
       <source src="img/parking-lot-video.mp4" type="video/mp4">
     </video>
   </div>
@@ -2382,7 +2384,7 @@ img { max-width: 100%; display: block; }
     <div class="services">
       <div class="service">
         <div class="service-num">01 / Residential & Commercial</div>
-        <video class="service-video" autoplay muted loop playsinline preload="auto" poster="img/crew-driveway.jpg">
+        <video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/crew-driveway.jpg">
           <source src="img/driveway-video.mp4" type="video/mp4">
         </video>
         <h3>Asphalt Driveways</h3>
@@ -2392,7 +2394,7 @@ img { max-width: 100%; display: block; }
 
       <div class="service">
         <div class="service-num">02 / Commercial</div>
-        <video class="service-video" autoplay muted loop playsinline preload="auto" poster="img/parking-lot-dusk.jpg">
+        <video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/parking-lot-dusk.jpg">
           <source src="img/parking-lot-video.mp4" type="video/mp4">
         </video>
         <h3>Parking Lots</h3>
@@ -2402,7 +2404,7 @@ img { max-width: 100%; display: block; }
 
       <div class="service">
         <div class="service-num">03 / Protection</div>
-        <video class="service-video" autoplay muted loop playsinline preload="auto" poster="img/sealcoat.png">
+        <video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/sealcoat.png">
           <source src="img/sealcoat-video.mp4" type="video/mp4">
         </video>
         <h3>Sealcoating</h3>
@@ -2816,7 +2818,7 @@ img { max-width: 100%; display: block; }
         <span style="font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel);">Or call direct: <a href="tel:9038856388" style="color:var(--amber);font-weight:500;">(903) 885-6388</a></span>
       </div>
     </div>
-    <form class="quote-form reveal" id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+    <form class="quote-form reveal" id="quoteForm" data-awp-form>
       <div class="form-row">
         <div class="form-field">
           <label for="q-name">Full Name</label>
@@ -2834,7 +2836,7 @@ img { max-width: 100%; display: block; }
         </div>
         <div class="form-field">
           <label for="q-city">City / Area</label>
-          <select id="q-city" autocomplete="address-level2">
+          <select id="q-city" name="city" autocomplete="address-level2">
             <option value="">Select your area</option>
             <option>Sulphur Springs</option>
             <option>Tyler</option>
@@ -2850,13 +2852,13 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="form-field">
         <label for="q-service">Service Needed</label>
-        <select id="q-service">
+        <select id="q-service" name="service">
           <option value="">Select a service</option>
           <option>Driveway Paving (New)</option>
           <option>Driveway Replacement</option>
           <option>Parking Lot Paving</option>
           <option>Sealcoating</option>
-          <option>Striping & Marking</option>
+          <option>Striping &amp; Marking</option>
           <option>Asphalt Repair</option>
           <option>Overlay / Resurfacing</option>
           <option>Other / Not Sure</option>
@@ -2864,7 +2866,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="form-field">
         <label for="q-details">Tell Paul what you're working with</label>
-        <textarea id="q-details" placeholder="Approximate size, current condition, timeline..." enterkeyhint="send"></textarea>
+        <textarea id="q-details" name="details" placeholder="Approximate size, current condition, timeline..." enterkeyhint="send"></textarea>
       </div>
       <button type="submit" class="btn-primary form-submit">
         Get Your Quote
@@ -3049,62 +3051,7 @@ document.getElementById('hamburger')?.addEventListener('keydown', function(e) {
   });
 })();
 
-// Form submission — sends to /api/contact via Resend
-async function handleQuoteSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('quoteForm');
-  const btn = form.querySelector('button[type="submit"]');
-  const success = document.getElementById('formSuccess');
-
-  // Loading state
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-
-  const payload = {
-    name:    document.getElementById('q-name')?.value?.trim()    || '',
-    phone:   document.getElementById('q-phone')?.value?.trim()   || '',
-    email:   document.getElementById('q-email')?.value?.trim()   || '',
-    city:    document.getElementById('q-city')?.value?.trim()    || '',
-    service: document.getElementById('q-service')?.value?.trim() || '',
-    details: document.getElementById('q-details')?.value?.trim() || '',
-  };
-
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.error || 'Submission failed');
-    }
-
-    // Success animation
-    form.style.opacity = '0';
-    form.style.transform = 'translateY(-10px)';
-    form.style.transition = 'opacity 0.3s, transform 0.3s';
-    setTimeout(() => {
-      form.style.display = 'none';
-      success.classList.add('show');
-    }, 300);
-
-  } catch (err) {
-    btn.disabled = false;
-    btn.innerHTML = 'Get Your Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
-    // Show inline error
-    let errEl = form.querySelector('.form-error-msg');
-    if (!errEl) {
-      errEl = document.createElement('p');
-      errEl.className = 'form-error-msg';
-      errEl.style.cssText = 'color:#e05c4b;font-size:14px;margin-top:12px;text-align:center;';
-      btn.insertAdjacentElement('afterend', errEl);
-    }
-    errEl.textContent = err.message || 'Something went wrong. Please call (903) 885-6388.';
-  }
-}
+// Form submit + analytics handled by js/lead-form.js + js/analytics.js (loaded in <head>).
 
 // Phone number masking
 const phoneInput = document.getElementById('q-phone');

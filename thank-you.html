@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0B0D" />
+<title>Thanks — Paul Will Call You Back | Area Wide Paving</title>
+<meta name="description" content="Got it. Paul Pogue will personally call you back within 24 hours to schedule your free on-site quote. Need it faster? Call (903) 885-6388." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://areawidepaving.net/thank-you.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="js/analytics.js" defer></script>
+
+<!-- Fire form-submit conversion on this page in addition to the form-handler firing it.
+     Belt-and-suspenders: a server-side audit of redirects can later use just /thank-you. -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.AWP && typeof window.AWP.fireConversion === 'function') {
+      window.AWP.fireConversion('lead_form_submit', {
+        page_path: '/thank-you.html',
+        source: document.referrer || 'direct'
+      });
+    }
+  });
+</script>
+
+<style>
+:root {
+  --ink: #0A0B0D;
+  --ink-2: #131519;
+  --ink-3: #1A1D21;
+  --steel: #6B7280;
+  --bone: #F4F1EC;
+  --bone-2: #EAE4D9;
+  --amber: #F5A623;
+  --amber-2: #FFB948;
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter Tight', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--ink); color: var(--bone);
+  font-family: var(--sans); font-size: 16px; line-height: 1.6;
+  min-height: 100vh; display: flex; flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+.ty-wrap {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
+.ty-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 100%, rgba(245,166,35,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ty-card {
+  position: relative; z-index: 1;
+  max-width: 560px; width: 100%;
+  text-align: center;
+}
+.checkmark {
+  width: 72px; height: 72px;
+  margin: 0 auto 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(245,166,35,0.12);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 50%;
+}
+.checkmark svg { width: 36px; height: 36px; stroke: var(--amber); }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 18px;
+}
+h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+h1 em { font-style: italic; color: var(--amber); font-weight: 300; }
+
+.lead {
+  font-size: 17px; color: var(--bone-2);
+  margin-bottom: 32px; max-width: 480px;
+  margin-left: auto; margin-right: auto;
+  line-height: 1.65;
+}
+
+.what-next {
+  background: var(--ink-2);
+  border: 1px solid rgba(244,241,236,0.06);
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.what-next h3 {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 14px;
+}
+.what-next ol {
+  list-style: none; counter-reset: step;
+  display: grid; gap: 12px;
+}
+.what-next li {
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: 15px; color: var(--bone-2); line-height: 1.5;
+  counter-increment: step;
+}
+.what-next li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  background: rgba(245,166,35,0.12);
+  border: 1px solid rgba(245,166,35,0.3);
+  color: var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  margin-top: 1px;
+}
+.what-next li strong { color: var(--bone); font-weight: 600; }
+
+.cta-row {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 28px;
+  font-family: var(--sans); font-weight: 600; font-size: 16px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+.btn:active { transform: scale(0.97); }
+.btn svg { width: 20px; height: 20px; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--amber), var(--amber-2));
+  color: var(--ink);
+  box-shadow: 0 4px 20px rgba(245,166,35,0.25);
+}
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(245,166,35,0.4); }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(244,241,236,0.18);
+  color: var(--bone);
+}
+
+.fineprint {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel); margin-top: 8px;
+}
+.fineprint strong { color: var(--amber); }
+
+.ty-footer {
+  text-align: center;
+  padding: 24px 20px;
+  border-top: 1px solid rgba(244,241,236,0.06);
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel);
+}
+.ty-footer a { color: var(--bone-2); }
+.ty-footer a:hover { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<main class="ty-wrap">
+  <div class="ty-card">
+    <div class="checkmark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <div class="eyebrow">Got It</div>
+    <h1>Paul will <em>call you back</em> within 24 hours.</h1>
+    <p class="lead">
+      Your request just landed in Paul's inbox. He personally reviews every quote — no salespeople, no call centers.
+    </p>
+
+    <div class="what-next">
+      <h3>What Happens Next</h3>
+      <ol>
+        <li><strong>Paul calls you</strong> &mdash; usually same-day, always within 24 hours.</li>
+        <li><strong>Free on-site visit.</strong> He measures, evaluates drainage, and answers questions.</li>
+        <li><strong>Itemized quote in writing</strong> &mdash; line by line, no padding.</li>
+      </ol>
+    </div>
+
+    <div class="cta-row">
+      <a href="tel:9038856388" class="btn btn-primary" id="ty-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Paul Now
+      </a>
+      <a href="/" class="btn btn-ghost">
+        Back to Home
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="fineprint">
+      Need it faster? Call <strong>(903) 885&minus;6388</strong> &middot; Mon&ndash;Sat 7a&ndash;7p
+    </div>
+  </div>
+</main>
+
+<footer class="ty-footer">
+  &copy; 2026 Area Wide Paving &middot; Paul Pogue &middot;
+  <a href="/">areawidepaving.net</a> &middot;
+  4.9&star; Google &middot; 47 Reviews
+</footer>
+
+</body>
+</html>
