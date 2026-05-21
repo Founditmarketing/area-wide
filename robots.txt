@@ -1,5 +1,5 @@
 # Area Wide Paving — robots.txt
-# https://areawidepaving.net
+# https://www.areawidepaving.com
 
 User-agent: *
 Allow: /
@@ -34,4 +34,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Discovery
-Sitemap: https://areawidepaving.net/sitemap.xml
+Sitemap: https://www.areawidepaving.com/sitemap.xml
