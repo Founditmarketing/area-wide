@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Founditmarketing/area-wide#readme",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "resend": "^6.12.3"
   }
 }
