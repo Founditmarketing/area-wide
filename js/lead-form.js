@@ -121,38 +121,18 @@
 
     setLoading(form);
 
-    try {
-      var res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+    // Fire conversion
+    var conversion = form.dataset.awpConversion || 'lead_form_submit';
+    if (window.AWP && typeof window.AWP.fireConversion === 'function') {
+      window.AWP.fireConversion(conversion, {
+        service:   payload.service || '',
+        city:      payload.city || '',
+        page_path: location.pathname
       });
-      var data = {};
-      try { data = await res.json(); } catch (e) {}
-      if (!res.ok) throw new Error(data.error || 'Submission failed.');
-
-      // Fire conversion BEFORE redirect so the pixel registers
-      var conversion = form.dataset.awpConversion || 'lead_form_submit';
-      if (window.AWP && typeof window.AWP.fireConversion === 'function') {
-        window.AWP.fireConversion(conversion, {
-          service:   payload.service || '',
-          city:      payload.city || '',
-          page_path: location.pathname
-        });
-      }
-
-      // Redirect (default) or inline success
-      var redirect = form.dataset.awpRedirect;
-      if (redirect === undefined) redirect = '/thank-you.html';
-      if (redirect) {
-        // Small delay so the conversion event lands before navigation
-        setTimeout(function () { location.href = redirect; }, 250);
-      } else {
-        showSuccessInline(form);
-      }
-    } catch (err) {
-      showError(form, (err && err.message) || 'Something went wrong. Please call (903) 885-6388.');
     }
+
+    // Show inline success — lead-capture.js handles the actual submission
+    showSuccessInline(form);
   }
 
   function wire(form) {
