@@ -41,7 +41,7 @@
   function showSuccessInline(form) {
     form.innerHTML =
       '<p style="color:var(--amber, #F5A623); text-align:center; padding:32px 16px; font-weight:600; font-size:18px; line-height:1.4;">' +
-      '\u2713 Got it. Paul will call you within 24 hours. ' +
+      '\u2713 Got it. We\u2019ll call you back as soon as we can. ' +
       '<br><span style="color:var(--bone-2, #EAE4D9); font-weight:400; font-size:15px;">Need it faster? Call ' +
       '<a href="tel:9038856388" style="color:var(--amber, #F5A623);">(903) 885-6388</a>.</span></p>';
   }
